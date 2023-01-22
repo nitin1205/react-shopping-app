@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 import { ReactComponent as Logo } from "../../assests/logo.svg";
 import "./navigation.styles.scss";
 // import { UserContext } from "../../contexts/user.context";
-import { CartContext } from "../../contexts/cart.context";
+// import { CartContext } from "../../contexts/cart.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import { selectCurrentUser } from "../../store/user/user.selector";
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
 // import {
 //     NavigationContainer,
 //     LogoContainer,
@@ -18,12 +20,11 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 
 const Navigation = () => {
 
-    const currentUser =useSelector((state) => {
-        return state.user.currentUser;
-    });
+    const currentUser =useSelector(selectCurrentUser);
+    const isCartOpen = useSelector(selectIsCartOpen);
     // console.log(currentUser)
     // const { currentUser } = useContext(UserContext);
-    const { isCartOpen } = useContext(CartContext);
+    // const { isCartOpen } = useContext(CartContext);
 
     return (
         <Fragment>

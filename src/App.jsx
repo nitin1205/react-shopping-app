@@ -23,7 +23,7 @@ const dispatch = useDispatch();
         createUserDocFromAuth(user);
       }
       // console.log(user)
-      dispatch({type:'SET_CURRENT_USER', payload:user});
+      dispatch(setCurrentUser(user));
     });
 
     return unsubscribe;

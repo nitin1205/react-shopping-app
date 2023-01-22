@@ -7,8 +7,8 @@ import './index.scss';
 import App from './App';
 import { store } from './store/store';
 // import { UserProvider } from './contexts/user.context';
-import { CategoriesProvider } from './contexts/categories.context';
-import { CartProvider } from './contexts/cart.context';
+// import { CategoriesProvider } from './contexts/categories.context';
+// import { CartProvider } from './contexts/cart.context';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,11 +17,11 @@ root.render(
     <Provider store={store} >
       <BrowserRouter >
         {/* <UserProvider> */}
-          <CategoriesProvider>
-            <CartProvider>
+          {/* <CategoriesProvider> */}
+            {/* <CartProvider> */}
               <App />
-            </CartProvider>
-          </CategoriesProvider>
+            {/* </CartProvider> */}
+          {/* </CategoriesProvider> */}
         {/* </UserProvider> */}
       </BrowserRouter>
     </Provider>
