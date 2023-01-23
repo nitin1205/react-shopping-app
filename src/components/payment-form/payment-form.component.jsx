@@ -26,7 +26,7 @@ const PaymentForm = () => {
             headers: {
                 'Contetnt-Type': 'application/json'
             },
-            body: JSON.stringify({ amount: amount })
+            body: JSON.stringify({ amount: amount * 100 })
         }).then(res => res.json());
 
         const { paymentIntent: { client_secret }} = response;
@@ -56,7 +56,7 @@ const PaymentForm = () => {
             <FormContainer onSubmit={paymentHandler}>
                 <h2>Credit Card Payment</h2>
                 <CardElement/>
-                <Button buttonType={'inverted'} disabled={isProcessingPayment}>Pay Now</Button>
+                <Button buttonType={'inverted'} isLoading={isProcessingPayment}>Pay Now</Button>
             </FormContainer>
         </PaymentFormContainer>
     )
