@@ -27,7 +27,7 @@
 import { AnyAction } from "redux";
 
 import { Category } from "./category.types";
-import { fetchCategoriesSatrt, fetchCategoriesSuccess, fetchCategoriesFailed } from "./category.action";
+import { fetchCategoriesStart, fetchCategoriesSuccess, fetchCategoriesFailed } from "./category.action";
 
 export type CategoriesState = {
     readonly categories: Category[];
@@ -55,7 +55,7 @@ export const categoriesReducer = (
     //     default:
     //         return state;
     //     }
-    if (fetchCategoriesSatrt.match(action)) {
+    if (fetchCategoriesStart.match(action)) {
         return { ...state, isLoading: true };
     };
 
